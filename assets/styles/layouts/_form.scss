@@ -1,0 +1,132 @@
+.form-section{
+    @media screen and (max-width:1100px) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    @media screen and (max-width:600px) {
+        flex-direction: column;
+        text-align: center;
+        gap: 64px;
+        margin: 0 24px;
+    }
+
+    display: flex;
+    margin: 0 auto;
+    gap: 45px;
+    .text-container{
+        @media screen and (max-width:600px) {
+           min-height: 226px;
+           min-width: 327px;
+        }
+
+        max-width: 520px;
+        min-height: 220px;
+        align-self: center;
+        h1{
+            @media screen and (max-width:600px) {
+               margin-bottom: 16px;
+             }
+            margin-bottom:42px ;
+        }
+    }
+
+    .form-container{
+
+        @media screen and (max-width:600px) {
+           min-width: 327px
+        }
+        
+        max-width: 540px;
+        h4{
+
+            text-align: center;
+            border-radius: 10px;
+            background-color: $color1;
+            padding: 15px 32px;
+            box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.14);
+            margin-bottom: 24px;
+            span{
+                @include fontStyle(15px, 400, 26px, 0.27px);
+            }
+        }
+        
+        form{
+   
+            @media screen and (max-width:600px) {
+                min-height: 442px;
+                padding:24px;
+            }
+            
+            background: $white1;
+            color: $color5;
+
+            @include fontStyle(11px, 500, 26px, 0);
+             text-align: center;
+            width: 100%;
+            min-height: 474px;
+            padding: 40px;
+            border-radius: 10px;
+
+            div{
+              
+                @media screen and (max-width:600px) {
+                    margin-bottom: 20px;
+                }
+                margin-bottom:20px;
+                position: relative;
+                text-align: right;
+
+                & > span{
+                    display: block;
+                    color: red;
+                    opacity: 0;
+                    transition: 0.4;
+                }
+
+                &::after{
+                    position: absolute;
+                        content: "";
+                        width: 24px;
+                        height: 24px;
+                        background: url("../images/icon-error.svg");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        right: 25px;
+                        top:18px;
+                        opacity: 0;
+                        transition: 0.4s;
+                }
+                &.error{   
+                    &::after{
+                        
+                        opacity: 1;
+                    }
+                    input{
+                        border: 1px solid red;
+                    }
+
+                    span{
+                        opacity: 1;
+                    }
+                }
+            }
+
+            input[type="submit"]{
+                outline: none;
+                border: none;
+                cursor: pointer;
+                color: $white1;
+                background: $color2;
+                text-transform: uppercase;
+                box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.089);
+                margin-bottom: 8px;
+                transition: 0.4s ease;
+                &:hover{
+                    opacity: 80%;
+                }
+            }
+
+        }
+    }
+}

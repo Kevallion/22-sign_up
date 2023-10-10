@@ -1,0 +1,111 @@
+/************* Color **************/
+$white1: #FFF;
+$color1: #5E54A4;
+$color2: #38CC8B;
+$color3: #3D3B48;
+$color4: #DEDEDE;
+$color5: #BAB7D4;
+$color6: #FF7979;
+
+
+/************ Font ************/
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Bold.ttf);
+    font-weight:700;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Medium.ttf);
+    font-weight:500;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Regular.ttf);
+    font-weight:400;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-SemiBold.ttf);
+    font-weight:600;
+}
+
+$font1: Poppins, sans-serif;
+
+/************ General Parameter ************/
+
+
+@mixin fontStyle($fontSize, $fontWeight,$lineHeight,$letterSpacing){
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    @media screen and (max-width:600px) {
+        background-image: url(../images/bg-intro-mobile.png);
+      }
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../images/bg-intro-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #FF7979;
+
+    color: $white1;
+    @include fontStyle(16px, 500, 26px ,0 );
+    font-family: $font1;
+}
+
+h1{
+    @media screen and (max-width:600px) {
+        @include fontStyle(28px, 700, 36px, 0.29px);
+    }
+
+    @include fontStyle(55px, 700, 55px, 0.52px);
+}
+
+h4{
+    @include fontStyle(15px, 700 , 26px ,0.27px);
+}
+
+input{
+    @media screen and (max-width:600px) {
+        padding: 15px 19px;
+    }
+
+    width: 100%;
+    padding: 15px 32px;
+    border: 1px solid $color4;
+    border-radius: 5px;
+    @include fontStyle(14px, 600 , 26px ,0.25px);
+    color: $color3;
+    outline: $color1;
+    &::placeholder{
+        @include fontStyle(14px, 600 , 26px ,0.25px); 
+    }
+
+    &:focus{
+        border: 1px solid $color1;
+    }
+}
+
+a{
+    @include fontStyle(11px, 700 , 21px ,0);
+    text-decoration: none;
+    color: $color6;
+}
