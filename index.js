@@ -42,7 +42,7 @@ const lastNameChecker = (value) => {
       lastName = value;
     }
   } else {
-    errorDisplay("lastName", "First Name cannot be empty", false);
+    errorDisplay("lastName", "Last Name cannot be empty", false);
     lastName = null;
     if (value.length < 1) {
       clearTimeout(displayTime);
